@@ -1,0 +1,73 @@
+server:
+  port: 8088
+
+spring:
+  # \u6570\u636E\u5E93\u914D\u7F6E
+  datasource:
+    name: ${app.datasource.name}
+    url: jdbc:mysql://127.0.0.1:3306/shop?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: root123
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    # \u4F7F\u7528druid\u6570\u636E\u6E90
+    druid:
+      max-active: 20
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x' FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-open-prepared-statements: 20
+      #\u68C0\u6D4B\u8FDE\u63A5\u6C60\u6CC4\u9732
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      logAbandoned: true
+      # encrypt password
+      #filters: config,stat,wall,log4j
+      #connection-properties: "config.decrypt=true;config.decrypt.key=${app.datasource.druid.public-key};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000"
+      #use-global-data-source-stat: true
+
+mybatis:
+  typeAliasesPackage: cn.sc.shop #\u5B9E\u4F53\u7C7B
+  mapperLocations: classpath:cn/sc/shop/mapper/xml/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+      # encrypt password
+      #filters: config,stat,wall,log4j
+      #connection-properties: "config.decrypt=true;config.decrypt.key=${app.datasource.druid.public-key};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000"
+      #use-global-data-source-stat: true
+
+
+#redis集群
+redis:
+  host: 127.0.0.1
+  port: 6379
+  timeout: 20000
+#   集群环境打开下面注释，单机不需要打开
+#   cluster:
+#     集群信息
+#     nodes: xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx
+#     #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
+#     maxRedirects: 3
+  pool:
+    max-active: 8 #连接池的最大连接数
+    min-idle: 0 #最小空闲连接数, 默认
+    max-idle: 8 #最大空闲连接数, 默认8个
+    max-wait: -1 #获取连接时的最大等待毫秒数(如果设置为阻塞时BlockWhenExhausted),如果超时就抛异常, 小于零:阻塞不确定的时间,  默认-1
+  password:
+application:
+  name: shop-redis
+
+logging:
+  level:
+    cn.sc.shop: debug
+    cn.sc.shop.mapper: debug
+
+

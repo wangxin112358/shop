@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+   http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:annotation package="cn.sc.shop.service"/>
+    <dubbo:application name="dubbo-provider"/>
+    <!-- 使用zookeeper作为注册中心  timeout="60000"-->
+    <dubbo:registry protocol="zookeeper" address="zookeeper://127.0.0.1:2181" client="zkclient" />
+    <!-- port值-1 表示让dubbo自行找一个可用的port-->
+    <dubbo:protocol port="-1" name="dubbo"/>
+    <!--<dubbo:protocol name="dubbo" port="20895" />-->
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService
+    <dubbo:service interfaTestDubboProviderServicevice"
+                   ref="testDubboProviderService"></dubbo:service>-->
+    <!-- 声明需要暴露的服务接口（注意是接口,不是实现类） -->
+    <!-- 这里是具体实现类,id和上面的暴露的服务接口ref要一致,dubbo就是通过这个来注册对应的服务 -->
+    <!-- 同模块的registry使用local，不同模块的使用远程的register -->
+    <!--<dubbo:service  registry="register" id="testDubboProviderService" interface="cn.sc.shop.service.TestDubboProviderService"/>-->
+
+</beans>
