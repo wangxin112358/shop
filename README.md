@@ -1,42 +1,7 @@
 # springboot_dubbo-xml-mybatis
 springboot_dubbo(xml)+mybatis,只有provider,consumer
-
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@wangxin112358 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-wangxin112358
-/
-shop
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-shop/readme.txt
-
-王鑫 first commit
-Latest commit aa887b9 5 minutes ago
- History
- 0 contributors
-42 lines (34 sloc)  2.1 KB
   
-shop商城框架是1.0.0-RELEASE版本
+1.0.0-RELEASE版本
 
 集成：
 1.springboot（1.5.9.RELEASE）
