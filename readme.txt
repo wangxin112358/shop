@@ -20,7 +20,7 @@ shop-provider为dubbo生产者，shop-consumer为消费者，这两个工程端�
 
 使用dubbo（启动本地zookeeper）:
 如果有个功能想在shop-consumer里调用shop-provider里的方法，
-1.把com.alibaba的dubbo的2.8.4依赖加到本地私库里，https://mvnrepository.com/上没有，可以网上下载如果找不到找王鑫要
+1.把com.alibaba的dubbo的2.8.4依赖加到本地私库里，https://mvnrepository.com/上没有，可以网上下载如果找不到找我要
 下载后写换到\dubbox-master目录下，.执行命令mvn install -Dmaven.test.skip=true，找到dubbo-2.8.4.jar ，使用 mvn install:install-file -Dfile=C:\dubbo-2.8.4.jar -DgroupId=com.alibaba -DartifactId=dubbo -Dversion=2.8.4 -Dpackaging=jar 上传到 自己本地maven库里
 
 2.把shop-provider 里的此service的实现类加上
