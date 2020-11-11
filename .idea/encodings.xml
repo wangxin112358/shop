@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/shop-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-consumer/src/main/resources/dubbo-consumer.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/shop-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop时序图.jpg" charset="GBK" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

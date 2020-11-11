@@ -70,4 +70,12 @@ public class TestController {
         String response = (String) redisUtil.get("aa");      //print 男神
         return response;
     }
+
+    public static void main(String[] args) {
+        if("10005,10006,10007".contains("10008")){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+    }
 }
